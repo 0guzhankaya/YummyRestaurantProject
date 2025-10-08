@@ -1,3 +1,4 @@
+using System.Reflection;
 using Yummy.WebApi.Context;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddDbContext<ApiContext>();
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly()); // AutoMapper'ý servis olarak ekliyoruz ve mevcut assembly'i tarýyoruz.
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
