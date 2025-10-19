@@ -12,8 +12,8 @@ using Yummy.WebApi.Context;
 namespace Yummy.WebApi.Migrations
 {
     [DbContext(typeof(ApiContext))]
-    [Migration("20251008194031_mig2")]
-    partial class mig2
+    [Migration("20251019130326_mig2_1")]
+    partial class mig2_1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

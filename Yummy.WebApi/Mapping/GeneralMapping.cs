@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Yummy.WebApi.Dtos.FeatureDtos;
 using Yummy.WebApi.Dtos.MessageDtos;
+using Yummy.WebApi.Dtos.ProductDtos;
 using Yummy.WebApi.Entities;
 
 namespace Yummy.WebApi.Mapping
@@ -18,6 +19,12 @@ namespace Yummy.WebApi.Mapping
 			CreateMap<Message, GetFeatureDto>().ReverseMap();
 			CreateMap<Message, UpdateFeatureDto>().ReverseMap();
 			CreateMap<Message, CreateFeatureDto>().ReverseMap();
+
+			CreateMap<Product, CreateProductDto>().ReverseMap();
+			CreateMap<Product, ResultProductWithCategoryDto>()
+				.ForMember(x => x.CategoryName, y => y.MapFrom(z => z.Category.CategoryName))
+				.ReverseMap();
+
 
 		}
 	}
